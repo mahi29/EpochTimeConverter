@@ -5,7 +5,6 @@
 
 
 TODO: Add support for 24hour clock w/ preferences
-TOOD: Support milliseconds input as well seconds
 """
 
 __version__ = "0.1.0"
@@ -32,18 +31,42 @@ def main(wf):
         wf.add_item(title='Current Epoch Time', subtitle=timestamp, copytext=timestamp)
     else:
         # Convert epoch_ts to human readable date
-        naive_utc_dt = datetime.utcfromtimestamp(float(time_to_convert))
-        local_dt = datetime.fromtimestamp(float(time_to_convert))
+
+        # Account for time being passed in as milli/micro/nanoseconds
+        timestamp, format = normalize_to_seconds(time_to_convert)
+        wf.logger.info("Input timestamp '{}' was recognized as {}".format(time_to_convert, format))
+
+        # Create datetime objects both locally and in UTC
+        naive_utc_dt = datetime.utcfromtimestamp(timestamp)
         utc_dt = naive_utc_dt.replace(tzinfo=pytz.UTC)
+        local_dt = datetime.fromtimestamp(timestamp)
+
+        # Format datetime to strings
         output_str = utc_dt.strftime(time_format_str)
         local_time_output = local_dt.strftime(time_format_str)
         offset_str = get_offset_str_between_local_and_utc(naive_utc_dt, local_dt)
         local_time_output_with_offset = "{} {}".format(local_time_output, offset_str)
+
+        # Add to Alfred
         wf.add_item(title="UTC Time", subtitle=output_str, valid=True, copytext=output_str)
         wf.add_item(title="Local Time", subtitle=local_time_output_with_offset, valid=True, copytext=local_time_output_with_offset)
 
 
     wf.send_feedback()
+
+
+def normalize_to_seconds(time_to_convert):
+    len_of_input = len(time_to_convert)
+    if len_of_input < 11:
+        return float(time_to_convert), "seconds"
+    elif len_of_input <= 14:
+        # Milliseconds
+        return float(time_to_convert)/ 1000, "milliseconds"
+    elif len_of_input <= 17:
+        # micro
+        return float(time_to_convert)/ 1000000, "microseconds"
+    else:
+        return float(time_to_convert)/ 1000000000, "nanoseconds"
 
 
 def get_offset_str_between_local_and_utc(naive_utc_dt, local_dt):
