@@ -1,18 +1,13 @@
 Percent Change
 --------------
 
-This is an Alfred Workflow to help you do percentage calculations. You can see
-some background info on the original [forum post](http://www.alfredforum.com/topic/4731-percent-change/).
+This is an Alfred Workflow to help you convert between unix timestamps and human readable strings.
+It is modeled after [https://www.epochconverter.com/](https://www.epochconverter.com/)
 
 The supported calculations include:
 
-1. *Percent Change* (increase/decrease): `% 3 6` -> 100%
-2. *Percentage Of*: 3 is what percent of 100: `% 3 of 100` -> 3%
-3. *Percent Of*: 5 percent of 100 is 5: `% 5 percent of 100` -> 5, or `% 5% of 100` -> 5
-4. *Percent Decrease*: What is 2 percent from 100: `% 100 - 2%`
-5. *Percent Increase*: What is 100 + 2%: `% 100 + 2%`
-6. *Original number before Percent Decrease*: What number is 100 2 percent less than?:`% 100 is 2% lt`
-7. *Original number before Percent Increase*: What number is 100 2 percent more than?:`% 100 is 2% gt`
+1. **etc now** Returns the current time in UTC and as a unix timestamp
+2. **etc** *unix_ts*: Given a unix timestamp in seconds, returns the equivalent time in both system local time and UTC timezone
 
 ## Build:
 
@@ -31,4 +26,4 @@ This Workflow is available under the terms of the MIT License. See the full
 
 Contributions to this project are welcome. To contribute, feel free to fork
 this repo, add your changes/features/improvements, then open a pull request.
-Don't for get to add your name to the [AUTHORS file](AUTHORS.md).
+Don't for get to add your name to the [AUTHORS](AUTHORS.md) file.
