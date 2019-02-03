@@ -9,9 +9,8 @@ TODO: Add support for 24hour clock w/ preferences
 
 __version__ = "0.1.0"
 import sys
-from datetime import datetime, timedelta
-import time
-from workflow import Workflow, ICON_INFO
+from datetime import datetime
+from workflow import Workflow
 import pytz
 import calendar
 
@@ -51,7 +50,6 @@ def main(wf):
         wf.add_item(title="UTC Time", subtitle=output_str, valid=True, copytext=output_str)
         wf.add_item(title="Local Time", subtitle=local_time_output_with_offset, valid=True, copytext=local_time_output_with_offset)
 
-
     wf.send_feedback()
 
 
@@ -61,12 +59,12 @@ def normalize_to_seconds(time_to_convert):
         return float(time_to_convert), "seconds"
     elif len_of_input <= 14:
         # Milliseconds
-        return float(time_to_convert)/ 1000, "milliseconds"
+        return float(time_to_convert) / 1000, "milliseconds"
     elif len_of_input <= 17:
         # micro
-        return float(time_to_convert)/ 1000000, "microseconds"
+        return float(time_to_convert) / 1000000, "microseconds"
     else:
-        return float(time_to_convert)/ 1000000000, "nanoseconds"
+        return float(time_to_convert) / 1000000000, "nanoseconds"
 
 
 def get_offset_str_between_local_and_utc(naive_utc_dt, local_dt):
@@ -83,6 +81,3 @@ def get_offset_str_between_local_and_utc(naive_utc_dt, local_dt):
 if __name__ == "__main__":
     wf = Workflow()
     sys.exit(wf.run(main))
-
-
-
