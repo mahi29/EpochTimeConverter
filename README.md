@@ -1,4 +1,4 @@
-Percent Change
+Epoch Time Converter
 --------------
 
 This is an Alfred Workflow to help you convert between unix timestamps and human readable strings.
@@ -27,3 +27,4 @@ This Workflow is available under the terms of the MIT License. See the full
 Contributions to this project are welcome. To contribute, feel free to fork
 this repo, add your changes/features/improvements, then open a pull request.
 Don't for get to add your name to the [AUTHORS](AUTHORS.md) file.
+
