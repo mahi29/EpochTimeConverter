@@ -1,6 +1,8 @@
 Epoch Time Converter
 --------------
 
+![](https://imgur.com/LeO2ztb)
+
 This is an Alfred Workflow to help you convert between unix timestamps and human readable strings.
 It is modeled after [https://www.epochconverter.com/](https://www.epochconverter.com/)
 
