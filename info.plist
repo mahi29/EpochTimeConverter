@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.mahith.epoch_time_converter</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict/>
+	<key>createdby</key>
+	<string>Mahith Amancherla</string>
+	<key>description</key>
+	<string>Easily convert a epoch timestamp to a date</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Epoch Time Converter</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>etc</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>python epoch_converter.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string>/usr/local/bin/python3</string>
+				<key>subtext</key>
+				<string>Convert an epoch timestamp to a date</string>
+				<key>title</key>
+				<string>Epoch Time Converter</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>ABB6BA81-8665-40FE-A867-448DF94386CA</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Epoch Time Converter
+--------------
+
+This is an Alfred Workflow to help you do convert an epoch timestamp to a human readable date. It is very similar to what epochconverter.com provides
+
+
+
+## License
+
+This Workflow is available under the terms of the MIT License. See the full
+[LICENSE](LICENSE.TXT) for more details.
+
+
+## Contributing
+
+Contributions to this project are welcome. To contribute, feel free to fork
+this repo, add your changes/features/improvements, then open a pull request.
+Don't for get to add your name to the [AUTHORS file](AUTHORS.md).</string>
+	<key>uidata</key>
+	<dict>
+		<key>ABB6BA81-8665-40FE-A867-448DF94386CA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>200</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>0.1.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
